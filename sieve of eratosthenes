@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+void primesieve(int n){
+//declare array of 2 to n 
+    int arr[100]={0};
+    //looping 2 to n first and check if arr[i] is 0 or not
+    for(int i=2;i<=n;i++){
+        if(arr[i]==0){
+            //looping again from i's sqaure number to n and mark its multiple 
+            for(int j=i*i;j<=n;j+=i){
+                arr[j]=1;  //mark it as 1 
+            }
+        }
+    }
+    //loopig again from 2 to n and check if arr[i] is 0 if it is 0 then print i (i is that prime number )
+    for(int i=2;i<=n;i++){
+    if(arr[i]==0){
+        cout<<i<<endl;
+        }
+    }
+    cout<<endl;
+}
+
+
+int main(){
+    int n;
+    cin>>n;
+
+    primesieve(n);
+    return 0;
+}
